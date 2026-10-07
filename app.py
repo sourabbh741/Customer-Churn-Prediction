@@ -138,13 +138,13 @@ with r1_c1:
 
 with r1_c2:
     st.markdown("### Contract Type vs Churn")
-    fig_contract = px.histogram(data, x="Contract", color="Churn String", bmode="group", color_discrete_map=color_map)
+    fig_contract = px.histogram(data, x="Contract", color="Churn String", barmode="group", color_discrete_map=color_map)
     fig_contract.update_layout(plotly_dark_theme, yaxis_title="Count")
     st.plotly_chart(fig_contract, use_container_width=True)
 
 with r1_c3:
     st.markdown("### Internet Service vs Churn")
-    fig_internet = px.histogram(data, x="Internet Service", color="Churn String", bmode="group", color_discrete_map=color_map)
+    fig_internet = px.histogram(data, x="Internet Service", color="Churn String", barmode="group", color_discrete_map=color_map)
     fig_internet.update_layout(plotly_dark_theme, yaxis_title="Count")
     st.plotly_chart(fig_internet, use_container_width=True)
 
@@ -165,7 +165,7 @@ with r2_c2:
 
 with r2_c3:
     st.markdown("### Payment Method vs Churn")
-    fig_payment = px.histogram(data, x="Payment Method", color="Churn String", bmode="group", color_discrete_map=color_map)
+    fig_payment = px.histogram(data, x="Payment Method", color="Churn String", barmode="group", color_discrete_map=color_map)
     fig_payment.update_layout(plotly_dark_theme, yaxis_title="Count")
     st.plotly_chart(fig_payment, use_container_width=True)
 
