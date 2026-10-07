@@ -9,63 +9,34 @@ An end-to-end Machine Learning project that predicts whether a telecom customer 
 ---
 
 Application Architecture : 
-                                 ┌─────────────────────────────┐
-                    │        User / Browser       │
-                    └──────────────┬──────────────┘
-                                   │
-                                   ▼
-                    ┌─────────────────────────────┐
-                    │       Streamlit Web App     │
-                    │          (app.py)            │
-                    └──────────────┬──────────────┘
-                                   │
-              ┌────────────────────┼────────────────────┐
-              │                    │                    │
-              ▼                    ▼                    ▼
-     ┌────────────────┐   ┌────────────────┐   ┌────────────────┐
-     │   Dashboard    │   │    Prediction  │   │    Insights    │
-     │   Dashboard.py │   │  Prediction.py │   │   Insight.py   │
-     └────────┬───────┘   └────────┬───────┘   └────────────────┘
-              │                    │
-              │                    ▼
-              │           ┌────────────────────┐
-              │           │   Input Processing │
-              │           │     (utils.py)     │
-              │           └─────────┬──────────┘
-              │                     │
-              │                     ▼
-              │           ┌────────────────────┐
-              │           │ Feature Encoding & │
-              │           │   Preprocessing    │
-              │           └─────────┬──────────┘
-              │                     │
-              │                     ▼
-              │           ┌────────────────────┐
-              │           │ Trained ML Model   │
-              │           │ Logistic Regression│
-              │           │     (.pkl)         │
-              │           └─────────┬──────────┘
-              │                     │
-              │                     ▼
-              │           ┌────────────────────┐
-              │           │  Churn Prediction  │
-              │           │  & Probability     │
-              │           └─────────┬──────────┘
-              │                     │
-              └─────────────────────┼───────────────────┐
-                                    ▼                    │
-                         ┌────────────────────┐           │
-                         │ Business Insights  │           │
-                         │ & Visualizations   │◄──────────┘
-                         └─────────┬──────────┘
-                                   │
-                                   ▼
-                    ┌─────────────────────────────┐
-                    │       Result to User        │
-                    │   Churn / Not Churn +       │
-                    │   Business Recommendations │
-                    └─────────────────────────────┘
 
+                    User
+                     │
+                     ▼
+          Streamlit Web Application
+                     │
+        ┌────────────┼────────────┐
+        ▼            ▼            ▼
+    Dashboard    Prediction    Insights
+                     │
+                     ▼
+             Input Processing
+                 (utils.py)
+                     │
+                     ▼
+          Feature Encoding &
+             Preprocessing
+                     │
+                     ▼
+          Logistic Regression
+              Trained Model
+                     │
+                     ▼
+            Churn Prediction
+                     │
+                     ▼
+          Result + Insights
+       
 
              DATA & MODEL LAYER
              ──────────────────
@@ -149,17 +120,30 @@ Customer-Churn-Prediction/
 
 ---
 
-## 📈 Machine Learning Workflow
+## 🔄 Machine Learning Workflow
 
-- Data Collection
-- Data Cleaning
-- Exploratory Data Analysis (EDA)
-- Feature Engineering
-- Label Encoding
-- Model Training
-- Model Evaluation
-- Model Selection
-- Model Deployment
+```text
+Customer Dataset
+       ↓
+Data Cleaning
+       ↓
+Exploratory Data Analysis
+       ↓
+Feature Engineering
+       ↓
+Data Preprocessing
+       ↓
+Model Training
+       ↓
+Model Evaluation
+       ↓
+Saved ML Model
+       ↓
+Streamlit Application
+       ↓
+Real-Time Churn Prediction
+       ↓
+Business Insights
 
 ---
 
