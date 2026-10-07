@@ -1,8 +1,95 @@
 # 📊 Customer Churn Prediction Dashboard
 
+[🔗 View Live Application](https://customer-churn-prediction-yssebqdsvbbjgnnbswqbmk.streamlit.app/)
+
 An end-to-end Machine Learning project that predicts whether a telecom customer is likely to churn using customer demographics, service usage, and billing information. The project features an interactive Streamlit dashboard for real-time predictions and business insights.
 
+
+
 ---
+
+Application Architecture : 
+                                 ┌─────────────────────────────┐
+                    │        User / Browser       │
+                    └──────────────┬──────────────┘
+                                   │
+                                   ▼
+                    ┌─────────────────────────────┐
+                    │       Streamlit Web App     │
+                    │          (app.py)            │
+                    └──────────────┬──────────────┘
+                                   │
+              ┌────────────────────┼────────────────────┐
+              │                    │                    │
+              ▼                    ▼                    ▼
+     ┌────────────────┐   ┌────────────────┐   ┌────────────────┐
+     │   Dashboard    │   │    Prediction  │   │    Insights    │
+     │   Dashboard.py │   │  Prediction.py │   │   Insight.py   │
+     └────────┬───────┘   └────────┬───────┘   └────────────────┘
+              │                    │
+              │                    ▼
+              │           ┌────────────────────┐
+              │           │   Input Processing │
+              │           │     (utils.py)     │
+              │           └─────────┬──────────┘
+              │                     │
+              │                     ▼
+              │           ┌────────────────────┐
+              │           │ Feature Encoding & │
+              │           │   Preprocessing    │
+              │           └─────────┬──────────┘
+              │                     │
+              │                     ▼
+              │           ┌────────────────────┐
+              │           │ Trained ML Model   │
+              │           │ Logistic Regression│
+              │           │     (.pkl)         │
+              │           └─────────┬──────────┘
+              │                     │
+              │                     ▼
+              │           ┌────────────────────┐
+              │           │  Churn Prediction  │
+              │           │  & Probability     │
+              │           └─────────┬──────────┘
+              │                     │
+              └─────────────────────┼───────────────────┐
+                                    ▼                    │
+                         ┌────────────────────┐           │
+                         │ Business Insights  │           │
+                         │ & Visualizations   │◄──────────┘
+                         └─────────┬──────────┘
+                                   │
+                                   ▼
+                    ┌─────────────────────────────┐
+                    │       Result to User        │
+                    │   Churn / Not Churn +       │
+                    │   Business Recommendations │
+                    └─────────────────────────────┘
+
+
+             DATA & MODEL LAYER
+             ──────────────────
+
+       ┌──────────────────┐
+       │ Customer Dataset │
+       └────────┬─────────┘
+                ▼
+       ┌──────────────────┐
+       │ Data Cleaning &  │
+       │ Feature Engineering│
+       └────────┬─────────┘
+                ▼
+       ┌──────────────────┐
+       │ Model Training   │
+       │ & Evaluation     │
+       └────────┬─────────┘
+                ▼
+       ┌──────────────────┐
+       │ Logistic         │
+       │ Regression Model │
+       └──────────────────┘
+
+         
 
 ## 🚀 Features
 
